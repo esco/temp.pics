@@ -1,0 +1,300 @@
+* {
+  outline: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+  font: .625em "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #1E2633;
+  padding: 0;
+  margin: 0;
+  color: #fff;
+}
+
+a {
+  color: #fff;
+}
+
+p {
+  color: #fff;
+}
+
+button {
+  border: none;
+  display: inline;
+  margin: 0;
+  padding: 0px 6px;
+  cursor: pointer;
+}
+
+header {
+  background: #0A0D12;
+  width: 100%;
+  height: 30px;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+}
+
+header a {
+  font-size: 1.3em;
+}
+
+.notice {
+  text-align: center;
+  font-size: 1.4em;
+}
+
+.logo {
+  font-weight: bold;
+  color: #fff;
+  text-align: left;
+  line-height: 30px;
+  display: inline;
+  position: relative;
+  left: 20px;
+  text-decoration: none;
+}
+
+.headerLink {
+  float: right;
+  line-height: 30px;
+  padding: 0px 6px;
+}
+
+.upload {
+  background: #000;
+  float: right;
+  line-height: 30px;
+  right: 0px;
+  top: 0px;
+  text-decoration: none;
+  padding: 0px 6px;
+  border-left: 1px solid #2e3b4e;
+}
+
+#uploadForm input[type=submit] {
+  cursor: pointer;
+}
+
+#uploadForm input[type=submit]:hover {
+  background: #5f7ba3;
+}
+
+.pics {
+  margin-top: 50px;
+  padding-bottom: 100px;
+}
+
+.pic {
+  background: #2e3b4e;
+  width: 100%;
+  max-width: 800px;
+  min-width: 320px;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.desktop .pic {
+  max-width: 600px;
+}
+
+.pic a .description {
+  zoom: 1;
+  filter: alpha(opacity=0);
+  position: absolute;
+  z-index: 99;
+  bottom: 31px;
+  left: 0;
+  background: rgba(0,0,0,.8);
+  width: 100%;
+  display: none;
+  -webkit-transition: opacity .15s ease-in-out;
+  -moz-transition: opacity .15s ease-in-out;
+  -ms-transition: opacity .15s ease-in-out;
+  -o-transition: opacity .15s ease-in-out;
+  transition: opacity .15s ease-in-out;
+}
+
+.pic a:hover .description {
+  filter: alpha(opacity=100);
+  display: block;
+  opacity: 1;
+}
+
+.pic .description p {
+  padding: 10px;
+}
+
+.pic img {
+  width: 100%;
+  /*border-right: 7px solid #1E2633;*/
+}
+
+@media (max-width: 800px) {
+  .pic {
+    font-size: .8em;
+  }
+}
+
+@media (max-width: 400px) {
+  .pic {
+    font-size: .6em;
+  }
+}
+
+.pic .detail {
+  width: 100%;
+  font-size: 1.3em;
+  padding: 10px;
+}
+
+.pic .detail p {
+  margin: 0;
+}
+
+.pic .detail .title {
+  float: left;
+}
+
+.pic .detail .expiration {
+  float: right;
+  padding-right: 20px;
+}
+
+.clear {
+  clear: both;
+}
+
+.time {
+  color: #ff0000;
+  background: #1E2633;
+  padding: 2px;
+}
+
+.message-box {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.input {
+  border: none;
+  border-bottom: 1px solid #0A0D12;
+  background: #2e3b4e;
+  color: #fff;
+  text-align: center;
+  font-size: 1.1em;
+  letter-spacing: 2px;
+}
+
+#more {
+  display: none;
+}
+
+.text, .email {
+  width: 200px;
+  height: 30px;
+}
+
+#more .input {
+  width: 50%;
+}
+
+#more .input.textarea {
+  height: 10%;
+}
+
+.message-box {
+  min-width: 200px;
+}
+
+.message-box .email {
+  margin-left: 54px;
+}
+
+.submit {
+  background: #0A0D12;
+  color: #fff;
+  border: none;
+  height: 30px;
+  cursor: pointer;
+}
+
+.camera {
+  background: url(/images/camera.png);
+  width: 100px;
+  height: 100px;
+}
+
+.hide {
+  display: none;
+}
+
+#afterPic {
+  margin-top: 100px;
+
+}
+
+#afterPic #expires {
+
+}
+
+#loading {
+  margin-top: 100px;
+}
+
+.missing {
+  background: #000;
+  color: #fff;
+  font-size: 1.5em;
+  text-align: center;
+  height: 240px;
+}
+
+/* Hide input field */
+input[type="file"] {
+  outline: none;
+  cursor: pointer;
+  position: absolute;
+  clip: rect(19px, 100px, 100px, 0px);
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+.next-image {
+    height: 20px;
+    font-size: 12px;
+    text-decoration: none;
+    background: #1E2633;
+    padding: 2px;
+}
+
+.next-image::after {
+    content: " >>";
+}
+
+/* Mozilla */
+@-moz-document url-prefix()
+{
+  input[type="file"] { clip:rect(19px, 100px, 100px, 0px);  }
+}
+
+/* Webkit */
+* > /**/ input[type="file"], x:-webkit-any-link { clip: rect(21px, 100px, 100px, 0px);  }

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block js %}
+  <script type="text/javascript" src="/js/index.js"></script>
+{% endblock %}
+
+{% block content %}
+  <div class="pics">
+  {% if (selectedExpired) %}
+    <p class='notice'> The requested picture has expired </p>
+  {% endif %}
+
+  {% if not pics.length %}
+    <p class='notice'>Everything expired :-O <br /><br />Here's your chance to be <a href='/upload'>first</a></p>
+  {% endif %}
+
+  {% for pic in pics %}
+    <div class="pic">
+      <a href="/i/{{pic.picId}}">
+        <!--div class="description"><p>This is the description</p></div-->
+        <img id="pic-{{pic.picId}}" src="{{IMAGE_URI}}/{{pic.picId}}{{pic.extension}}">
+      </a>
+      <div class="detail">
+        {% if false and next %} <a href="/i/{{next}}" class='next-image'>see next image</a> {% endif %}
+        <!--p class="title">This it the title of the image</p-->
+        <p class='expiration'>Expires <span class="time">{{pic.timeLeft}}</span></p>
+        <div class="clear"></div>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+{% endblock %}

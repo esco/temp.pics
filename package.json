@@ -1,0 +1,40 @@
+{
+  "name": "temp.pics",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node bootstrap.js",
+    "start-dev": "source ./env && nodemon bootstrap.js"
+  },
+  "dependencies": {
+    "async": "^0.9.0",
+    "aws-sdk": "^2.0.29",
+    "bluebird": "^2.3.11",
+    "body-parser": "^1.2.0",
+    "bunyan": "^0.22.3",
+    "check-referrer": "0.0.7",
+    "errorhandler": "^1.0.1",
+    "express": "3.4.0",
+    "express-device": "^0.3.10",
+    "express-session": "^1.8.1",
+    "formidable": "^1.0.14",
+    "imagemagick-stream": "^1.1.0",
+    "knox": "^0.8.10",
+    "knox-mpu": "^0.1.6",
+    "method-override": "^1.0.0",
+    "moment": "^2.6.0",
+    "mongoose": "^3.8.9",
+    "mongoose-auto-increment": "^3.0.2",
+    "morgan": "^1.0.1",
+    "multiparty": "^3.2.6",
+    "nodemailer": "^0.6.5",
+    "nunjucks": "^1.0.5",
+    "s3-upload-stream": "^1.0.6",
+    "serve-favicon": "^2.0.0",
+    "serve-static": "^1.1.0",
+    "underscore": "^1.6.0"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }
+}

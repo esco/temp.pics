@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block js %}
+<script type="text/javascript" src="/js/upload.js"></script>
+{% endblock %}
+
+{% block header_links %}
+<a class='headerLink' href='/tos'>Terms</a>
+{% endblock %}
+
+{% block content %}
+
+  {% if (closed) %}
+    <div class="message-box">
+      <form method="post" action='/notify'>
+        <input name="email" class='input email' type="text" placeholder='@'/> <input type='submit' class='submit'>
+      </form>
+
+      <p>uploads are closed for today</p>
+      <p>enter you email address to be notified when a spot opens up.</p>
+      <p>your email will be deleted from our records immediately after we notify you.</p>
+    </div>
+  {% else %}
+    <div class="message-box">
+      <form id="uploadForm" method="post" action='/upload' enctype="multipart/form-data">
+        <input name="pic" id="upload" class="camera" type="file" accept="image/*" capture="camera">
+        {% if is_mobile %}
+          <p>Click the camera to take a picture</p>
+        {% else %}
+          <p>Click the camera to upload a picture</p>
+        {% endif %}
+        <div id="afterPic" class="hide">
+          <label>Expires:
+            <select class='input' name='expires'>
+              <option value='24' selected="selected">24 Hours</option>
+              <option value='5'>5 Hours</option>
+              <option value='1'>1 Hour</option>
+            </select>
+          </label>
+          <label><input class='input' type='checkbox' />NSFW</label>
+
+          <div id="more">
+            <div><input class='input' placeholder="title" name="title" /></div>
+            <div><textarea class='input textarea' placeholder="description" name="description"></textarea></div>
+          </div>
+          <br><br>
+          <input class="input" type='submit' value='Upload'>
+          <br><br>
+          <div><a id="showMore" href="javascript:void(0)">add title, description (if you want)</a></div>
+        </div>
+
+        <div id="loading" class="hide">
+          <img src="/images/ajax-loader.gif" />
+          {% if is_mobile %}
+          This may take up to 30 seconds to upload! <br /> <br />Your device's camera takes really hi-res images. But don't worry, we are working to make this process faster!
+          {% endif %}
+        </div>
+      </form>
+    </div>
+  {% endif %}
+
+
+{% endblock %}

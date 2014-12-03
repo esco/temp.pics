@@ -1,0 +1,42 @@
+<html>
+<head>
+  <title>Temporary Pictures for the internet</title>
+
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  {% block css %}{% endblock %}
+  <meta name="robots" content="noimageindex">
+  <meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,width=device-width,height=device-height,target-densitydpi=device-dpi,user-scalable=yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!--script type="text/javascript" src="/js/jquery-2.0.0.js"></script-->
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  {% block js %}{% endblock %}
+</head>
+<body class="{{device_type}}">
+
+  <header>
+    <a class="logo" href="/">temp.pics</a></h2>
+    {% if is_mobile  %}
+    <a href='/upload' class='upload' onClick="_gaq.push(['_trackEvent', 'Button', 'click', 'upload']);">snap a pic</a>
+    {% else %}
+    <a href='/upload' class='upload' onClick="_gaq.push(['_trackEvent', 'Button', 'click', 'upload']);">upload</a>
+    {% endif %}
+
+    {% block header_links %}
+    {% endblock %}
+  </header>
+  {% block content %}
+  {% endblock %}
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-51059418-1', 'temp.pics');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+
+  </script>
+</body>
+</html>
